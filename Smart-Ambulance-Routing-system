@@ -1,0 +1,33 @@
+Smart Ambulance Routing System
+🚀 Project Overview
+
+The Smart Ambulance Routing System is a Java-based application designed to find the fastest and safest route for ambulances in emergency situations.
+It uses graph algorithms (like Dijkstra’s Algorithm) to calculate the shortest path between intersections on a city map, ensuring timely arrival at hospitals.
+
+⚙️ Key Features
+
+🚗 Real-time route visualization — Displays ambulance movement on a simulated city map.
+
+🗺️ Graph-based road network — Each intersection and road is represented as nodes and weighted edges.
+
+⏱️ Shortest path calculation — Uses Dijkstra’s algorithm to find the optimal path.
+
+🏥 Hospital destination — Automatically directs the ambulance to the nearest hospital node.
+
+🎨 Interactive UI — Simple 2D Java Swing interface for route and map visualization.
+
+🧩 Technologies Used
+
+Language: Java
+
+Library: Java Swing / AWT
+
+Algorithm: Dijkstra’s Shortest Path Algorithm
+
+IDE: IntelliJ IDEA / NetBeans
+
+Version Control: Git & GitHub
+
+🎯 Project Goal
+
+To build a system that can assist emergency response vehicles by automatically determining the quickest route through city traffic, improving response time and saving lives.

@@ -1,6 +1,6 @@
 package com.ambulance.routing;
 
-import java.awt.geom.Point2D; //x,y cordination hold
+import java.awt.geom.Point2D; //x,y cordination hold KOORBE
 
 public class Node {
     private String label;// node er name

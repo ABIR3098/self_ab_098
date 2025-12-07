@@ -1,17 +1,16 @@
 package com.ambulance.routing;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class DijkstraAlgorithm {
 
     public static List<Integer> getShortestPath(int[][] adjacencyMatrix, int start, int end) {
+
         int n = adjacencyMatrix.length;
         int[] dist = new int[n];
         int[] prev = new int[n];
         boolean[] visited = new boolean[n];
+
         Arrays.fill(dist, Integer.MAX_VALUE);
         Arrays.fill(prev, -1);
         dist[start] = 0;
@@ -26,8 +25,10 @@ public class DijkstraAlgorithm {
             }
             if (u == -1) break;
             visited[u] = true;
+
             for (int v = 0; v < n; v++) {
-                if (adjacencyMatrix[u][v] > 0 && dist[u] + adjacencyMatrix[u][v] < dist[v]) {
+                if (adjacencyMatrix[u][v] > 0 &&
+                        dist[u] + adjacencyMatrix[u][v] < dist[v]) {
                     dist[v] = dist[u] + adjacencyMatrix[u][v];
                     prev[v] = u;
                 }
@@ -37,13 +38,14 @@ public class DijkstraAlgorithm {
         List<Integer> path = new ArrayList<>();
         for (int at = end; at != -1; at = prev[at]) path.add(at);
         Collections.reverse(path);
+
         return path.get(0) == start ? path : null;
     }
 
     public static int calculateTotalDistance(int[][] adjacencyMatrix, List<Integer> path) {
-        int total = 0;
+        int sum = 0;
         for (int i = 0; i < path.size() - 1; i++)
-            total += adjacencyMatrix[path.get(i)][path.get(i + 1)];
-        return total;
+            sum += adjacencyMatrix[path.get(i)][path.get(i + 1)];
+        return sum;
     }
 }
